@@ -5,7 +5,10 @@
   "projects": {
     "my-components": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {"skipTests": true},
+        "@schematics/angular:service": {"skipTests": true}
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -25,9 +28,12 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -94,5 +100,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "555fedfe-0206-47cd-b2ad-95b5fbb9429d"
   }
 }
